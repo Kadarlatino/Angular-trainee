@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CarsApp">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <base href="/angular-test/">
+  <title>Angular</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/angular.js"></script>
+  <script src="js/app.js"></script>
+
+</head>
+<body ng-controller="CarsCtrl">
+  <div class="container">
+
+    <h1 class="page_title">Page title</h1>
+
+    <ul class="nav nav-wizard row">
+      <li class="wizard-step-1 active col-xs-6">
+        <a href="#/" ng-click="goBack()"><h3><b>1.</b>&nbsp;<small><b>Step 1</b></small></h3></a>
+      </li>
+      <li class="wizard-step-2 col-xs-6" >
+        <a href="#/step2" ng-click="nextStep($event)"><h3><b>2.</b>&nbsp;<small><b>Step 2</b></small></h3> </a>
+      </li>
+    </ul>
+
+    <div class="step step-wrapper" ng-view></div><!--end step-->
+
+    <!--STEP 1 TEMPLATE-->
+    <script type="text/ng-template" id="embedded.index.html">
+
+      <div class="step-1">
+        <h2 class="step-title">1. Step 1</h2>
+
+        <div class="row car-blocks">
+
+          <div class="col-sm-4" ng-repeat="color in ['orange','blue', 'green']">
+            <div class="list-block">
+
+              <h3>List</h3>
+              <div class="row">
+                <div class="car-list col-xs-12 col-sm-12 col-md-12">
+                  <div class="row">
+                    <div class="col-xs-12">Wide choise of lorem ipsum</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 car-holder">
+
+                      <input type="button" value="{{btn.title}}" class="btn btn-sm btn-orange-light car-btn car-id-{{btn.id}}" ng-repeat="btn in btns track by $index" ng-click="removeBtn($index, btn.id, btn.title)"/>
+
+                    </div>
+                  </div>
+                  <div class="row row-btn-wrap">
+                    <div class="col-xs-8">
+                      <a href="#/step2" class="btn btn-{{color}} btn-full" ng-click="nextStep($event)">
+                        Go to step 2
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="table_wrapper">
+
+          <table class="table">
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Popularity</th>
+              <th>&nbsp;</th>
+            </tr>
+            <tbody>
+              <tr class="car_id_{{car.id}}" ng-repeat="car in cars | orderBy:'-title':true">
+                <td>
+                  {{car.title}}
+                </td>
+                <td>{{car.description}}</td>
+                <td>{{car.price}}</td>
+                <td>
+                  <div class="stars-numbers">
+                      <a href="#" class="stars-orange" >
+                        <span class="glyphicon glyphicon-star" ng-repeat="t in getTimes(car.popularity) track by $index"></span>
+                      </a>
+
+                      <a href="#" class="stars-grey">
+                        <span class="glyphicon glyphicon-star" ng-repeat="t in getTimes(5) track by $index"></span>
+                      </a>
+                  </div>
+
+                </td>
+                <td>
+                  <button class="btn btn-default btn-default-green" ng-click="choosen($event, team, car.title)">Select</button>
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
+        </div>
+
+      </div>
+
+    </script>
+
+    <!-- /STEP 1 TEMPLATE-->
+
+    <!-- STEP 2 TEMPLATE: -->
+
+    <script type="text/ng-template" id="embedded.step2.html">
+      <div class="step-2">
+        <h2 class="step-title">2. Step 2</h2>
+
+        <table class="table">
+            <tr>
+              <th>Title</th>
+              <th>Price</th>
+            </tr>
+            <tbody>
+              <tr ng-repeat="btn in btns | orderBy:'-title':true">
+                <td>
+                  {{btn.title}}
+                </td>
+                <td>
+                  {{btn.price}}
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
+
+          <button class="btn btn-orange" ng-click="sendJson()">
+            Send to server
+          </button>
+
+          <a class="btn btn-blue" href="#/" ng-click="goBack()">Back</a>
+
+      </div>
+    </script>
+
+    <!-- /STEP 2 TEMPLATE -->
+
+  </div>
+</body>
+</html>

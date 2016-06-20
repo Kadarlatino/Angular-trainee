@@ -1,0 +1,38 @@
+[
+  {
+    "title":"Mercedes",
+    "id":1,
+    "price":10000,
+    "popularity":4,
+    "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+  {
+    "title":"Audi",
+    "id":2,
+    "price":8000,
+    "popularity":2,
+    "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+{
+    "title":"Daewoo",
+    "id":3,
+    "price":10000,
+    "popularity":2,
+    "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+  {
+    "title":"Kia",
+    "id":4,
+    "price":8000,
+    "popularity":2,
+    "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+    {
+    "title":"BMW",
+    "id":5,
+    "price":10000,
+    "popularity":5,
+    "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+  {
+    "title":"Lada",
+    "id":6,
+    "price":2000,
+    "popularity":3,
+    "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
+]

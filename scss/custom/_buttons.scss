@@ -1,0 +1,62 @@
+.btn {
+  @include transition(all 0.2s ease-in-out);
+}
+
+
+.btn-orange-light,
+.btn-orange,
+.btn-green,
+.btn-blue {
+  color: #fff;
+
+  &:hover {
+    color: #fff;
+  }
+}
+.car-holder .btn {
+  margin-right: 10px;
+  margin-bottom: 15px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.btn-full {
+  width: 100%;
+}
+
+.btn-orange-light {
+  background: $test_orange_light;
+  &:hover {
+    background: darken($test_orange_light, 15%);
+  }
+}
+
+.btn-orange {
+  background: $test_orange;
+  &:hover {
+    background: darken($test_orange, 15%);
+  }
+}
+
+.btn-blue {
+  background: $test_blue;
+  &:hover {
+    background: darken($test_blue, 15%);
+  }
+}
+
+.btn-green {
+  background: $test_green;
+  &:hover {
+    background: darken($test_green, 15%);
+  }
+}
+
+.btn-default-green {
+  color: $test_green;
+  border: 1px solid $test_green;
+  &:hover {
+    background: $test_green;
+    color: #fff;
+  }
+}

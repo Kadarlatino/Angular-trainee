@@ -1,0 +1,269 @@
+body
+{
+  color: $text-color;
+}
+
+.page_title
+{
+  margin-bottom: 30px;
+}
+
+.step {
+  margin: 70px 0 100px;
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background: $test_grey_light2;
+      }
+      td {
+        padding: 20px 10px;
+      }
+    }
+  }
+
+  .stars-numbers {
+    position: relative;
+    white-space: nowrap;
+    a {
+      position: absolute;
+      &:hover {
+          text-decoration: none;
+      }
+
+    }
+    .stars-orange {
+      z-index: 1;
+      &, span, span::before {
+        color: $test_orange_stars;
+      }
+    }
+    .stars-grey {
+      &, span, span::before {
+        color: $test_grey;
+      }
+    }
+
+  }
+
+  .step-title {
+    margin-bottom: 40px;
+  }
+  .list-block {
+    padding: 30px;
+    background: $test_grey_light2;
+    border-radius: 5px;
+    border: 1px solid $test_grey;
+    margin-bottom: 30px;
+
+    h3 {
+      margin: 0 0 30px;
+    }
+    .car-list {
+      .row > div:not(.car-holder) {
+        margin-bottom: 15px;
+      }
+      .row-btn-wrap>div{
+        margin-bottom: 0;
+      }
+
+    }
+
+
+  }
+  .car-blocks {
+    margin-bottom: 60px;
+  }
+
+  .btn-sm {
+    padding: 3px 10px;
+    font-weight: 600;
+    border-radius: 2px;
+
+  }
+
+  .btn {
+    font-size: .95em;
+  }
+}
+
+//Wizard
+.nav-wizard
+{
+  width: 100%;
+  margin: 0;
+  height: 60px;
+  h3 {
+    margin: 0 0 0 50px;
+    small {
+      color: #fff;
+    }
+  }
+  > li
+  {
+    padding: 0;
+    min-height: 60px;
+    > a
+    {
+      position: relative;
+      padding: 17px 15px;
+      color: #fff;
+      background-color: $test_grey_light;
+      &::after
+      {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        right: -30px;
+
+        width: 0;
+        height: 0;
+
+        content: '';
+
+        border-top: 30px inset transparent;
+        border-bottom: 30px inset transparent;
+        border-left: 30px solid $test_grey_light;
+      }
+    }
+    &:not(:first-child) > a
+    {
+      padding-left: 34px;
+      &::before
+      {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 0;
+        height: 0;
+
+        content: '';
+
+        border-top: 30px inset transparent;
+        border-bottom: 30px inset transparent;
+        border-left: 30px solid #fff;
+      }
+    }
+    &:first-child
+    {
+      > a
+      {
+        border-top-left-radius: 1px;
+        border-bottom-left-radius: 1px;
+      }
+    }
+    &:last-child
+    {
+      > a
+      {
+        margin-right: 30px;
+      }
+    }
+    &:hover {
+      > a
+      {
+        background-color: #d5d5d5;
+        &::before
+        {
+          border-right-color: #d5d5d5;
+        }
+        &::after
+        {
+          border-left-color: #d5d5d5;
+        }
+      }
+    }
+    &.done
+    {
+      > a{
+        background-color: $test_green;
+        &:hover {
+          background-color: darken($test_green, 20%);
+          &::before
+          {
+            border-right-color: darken($test_green, 20%);
+          }
+          &::after
+          {
+            border-left-color: darken($test_green, 20%);
+          }
+        }
+        &::before
+        {
+          border-right-color: $test_green;
+        }
+        &::after
+        {
+          border-left-color: $test_green;
+        }
+      }
+
+    }
+    &.active
+    {
+      > a
+      {
+        &,
+        &:hover,
+        &:focus
+        {
+          color: #fff;
+          background-color: $test_orange;
+        }
+        &::after
+        {
+          border-left-color: $test_orange;
+        }
+        .badge
+        {
+          color: #428bca;
+          background-color: #fff;
+        }
+      }
+    }
+    &.disabled
+    {
+      > a
+      {
+        color: #777;
+        &:hover,
+        &:focus
+        {
+          cursor: default;
+          text-decoration: none;
+
+          color: #777;
+          background-color: #eee;
+        }
+        &::before
+        {
+          border-right-color: #eee;
+        }
+        &::after
+        {
+          border-left-color: #eee;
+        }
+      }
+    }
+    .nav-justified &
+    {
+      float: none;
+      > a
+      {
+        padding: 10px 15px;
+        min-height: 60px;
+        @media (max-width: 768px)
+        {
+          margin-right: 0;
+
+          border-radius: 4px;
+          &::before,
+          &::after
+          {
+            border: none !important;
+          }
+        }
+      }
+    }
+  }// end of >li
+}
